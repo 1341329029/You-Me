@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/main.css"/>
+    <script type="text/javascript" src="__PUBLIC__/static/admin/js/libs/modernizr.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/admin/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/admin/ueditor/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/admin/ueditor/lang/zh-cn/zh-cn.js"></script>
+    
+</head>
+<body>
+   {include file="public/top" /}
+<div class="container clearfix">
+        {include file="public/left" /}
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">文章管理</a><span class="crumb-step">&gt;</span><span>新增文章</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th width="10%"><i class="require-red">*</i>文章标题：</th>
+                                <td>
+                                    <input class="common-text required" id="title" name="title" size="50" value="" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>关键词：</th>
+                                <td><input class="common-text" name="keywords" size="50" value="" type="text"></td>
+                            </tr>
+                            <tr>
+                                <th>描述：</th>
+                                <td><textarea name="desc" class="common-textarea" id="desc" cols="20" style="width: 50%;" rows="5"></textarea></td>
+                            </tr>
+                            <tr>
+                                <th>所属栏目：</th>
+                                <td>
+                              
+                                    <select name="cateid">
+                                        {volist name="cateres" id="vo"}
+
+                                            <option value="{$vo.id}">{$vo.catename}</option>
+
+                                        {/volist}
+                                    </select>
+                               
+                                </td>
+                            </tr> 
+                            <tr>
+                                <th>缩略图：</th>
+                                <td><input type="file" name="pic" /></td>
+                            </tr>
+                            <tr>
+                                <th>内容：</th>
+                                <td><textarea name="content" class="common-textarea" id="content" cols="30" style="width: 98%;" rows="10"></textarea></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+ 
+    <!--/main-->
+</div>
+<script type="text/javascript">
+ var ue = UE.getEditor('content', {
+        initialFrameHeight: 400,
+        initialFrameWeight: 1500
+    });
+</script>
+</body>
+</html>

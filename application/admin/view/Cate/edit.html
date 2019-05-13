@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/main.css"/>
+    <script type="text/javascript" src="__PUBLIC__/static/admin/js/libs/modernizr.min.js"></script>
+    <!-- <script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/admin/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/admin/ueditor/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/admin/ueditor/lang/zh-cn/zh-cn.js"></script> -->
+    
+</head>
+<body>
+   {include file="public/top" /}
+<div class="container clearfix">
+        {include file="public/left" /}
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">栏目管理</a><span class="crumb-step">&gt;</span><span>修改栏目</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="" method="post" id="myform" name="myform" enctype="multipart/form-data">
+                <input type="hidden" name="id" value="{$cates.id}">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th width="10%"><i class="require-red">*</i>栏目名称：</th>
+                                <td>
+                                    <input class="common-text required" id="catename" name="catename" size="50" value="{$cates.catename}" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>关键词：</th>
+                                <td><input class="common-text" name="keywords" size="50" value="{$cates.keywords}" type="text"></td>
+                            </tr>
+                            <tr>
+                                <th><i class="require-red">*</i>栏目类型：</th>
+                                <td><input name="type" value="1" id="" type="checkbox"
+                                {if condition="$cates.type eq 1 "} checked='checked' {/if}>留言板</td>
+                            </tr>
+                            <tr>
+                                <th>内容：</th>
+                                <td><textarea name="desc" class="common-textarea" id="desc" cols="30" style="width: 98%;" rows="10">
+                                    {$cates.desc}
+                                </textarea></td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+ 
+    <!--/main-->
+</div>
+<!-- <script type="text/javascript">
+ var ue = UE.getEditor('content', {
+        initialFrameHeight: 400,
+        initialFrameWeight: 1500
+    });
+</script> -->
+</body>
+</html>

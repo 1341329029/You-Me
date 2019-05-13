@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>后台管理</title>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/common.css"/>
+    <link rel="stylesheet" type="text/css" href="__PUBLIC__/static/admin/css/main.css"/>
+    <script type="text/javascript" src="__PUBLIC__/static/admin/js/libs/modernizr.min.js"></script>
+    <!-- <script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/admin/ueditor/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/admin/ueditor/ueditor.all.min.js"> </script>
+    <script type="text/javascript" charset="utf-8" src="__PUBLIC__/static/admin/ueditor/lang/zh-cn/zh-cn.js"></script> -->
+    
+</head>
+<body>
+   {include file="public/top" /}
+<div class="container clearfix">
+        {include file="public/left" /}
+    <div class="main-wrap">
+
+        <div class="crumb-wrap">
+            <div class="crumb-list"><i class="icon-font"></i><a href="/jscss/admin/design/">首页</a><span class="crumb-step">&gt;</span><a class="crumb-name" href="/jscss/admin/design/">管理员管理</a><span class="crumb-step">&gt;</span><span>修改管理员</span></div>
+        </div>
+        <div class="result-wrap">
+            <div class="result-content">
+                <form action="" method="post" >
+                <input type="hidden"  name="id" value="{$admins.id}">
+                    <table class="insert-tab" width="100%">
+                        <tbody>
+                            <tr>
+                                <th width="10%"><i class="require-red">*</i>用户名：</th>
+                                <td>
+                                    <input class="common-text required" id="catename" name="username" size="50" value="{$admins.username}" type="text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>密码：</th>
+                                <td><input class="common-text" name="password" size="50" value="" type="text"><i class="require-red">*</i>留空则默认不更改密码</td>
+                            </tr>
+                            <tr>
+                                <th></th>
+                                <td>
+                                    <input class="btn btn-primary btn6 mr10" value="提交" type="submit">
+                                    <input class="btn btn6" onclick="history.go(-1)" value="返回" type="button">
+                                </td>
+                            </tr>
+                        </tbody></table>
+                </form>
+            </div>
+        </div>
+ 
+    <!--/main-->
+</div>
+<!-- <script type="text/javascript">
+ var ue = UE.getEditor('content', {
+        initialFrameHeight: 400,
+        initialFrameWeight: 1500
+    });
+</script> -->
+</body>
+</html>
